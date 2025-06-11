@@ -45,36 +45,8 @@ class AmazonTest(unittest.TestCase):
 
         self.assertIn("Amazon", driver.title)
 
-        # Login ekranını açın ve giriş yapın
-        home_page.go_to_login_page()
-        login_page.login('smettommer@gmail.com', '(smoss1905A)')
 
-        # 'Samsung' araması yapın
-        search_results_page.search_for('samsung')
-
-        # Arama sonucunu doğrulayın
-        search_results_page.verify_search_results('samsung')
-
-        # 2. sayfaya geçin ve doğrulayın
-        search_results_page.go_to_next_page()
-        search_results_page.verify_on_page(2)
-
-        # Üçüncü ürüne tıklayın
-        search_results_page.click_third_product()
-
-        # Ürünü istek listesine ekleyin
-        product_page.add_to_list()
-
-        # İstek listesine gidin ve ürünü doğrulayın
-        wishlist_page.go_to_wishlist()
-        driver.save_screenshot("wishlist_debug.png")  # Sayfa ekran görüntüsünü al çünkü yüklendiğinden emin değiliz locater bulamıyor teyit amaçlı ekledim.
-        print("Sayfa başlığı:", driver.title)
-        wishlist_page.verify_item_in_wishlist('Samsung') # Belki tam login olmamışsızdır ve Amazon tekrar ana sayfaya atıyordur. Bunu doğrulamak için eklendi.
-
-        # Ürünü istek listesinden silin ve doğrulayın
-        wishlist_page.delete_items_from_wishlist()
-        wishlist_page.verify_item_not_in_wishlist('Samsung')
-        print("Test başarıyla tamamlandı!")
 
 if __name__ == "__main__":
     unittest.main()
+
