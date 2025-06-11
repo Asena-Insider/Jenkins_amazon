@@ -37,7 +37,7 @@ class AmazonTest(unittest.TestCase):
         product_page = ProductPage(driver)
         wishlist_page = WishlistPage(driver)
 
-        # Amazon ana sayfasına gidin
+        # Amazon ana sayfasına gidin ana sayfada olduğunuzu doğrulayın.
         home_page.open()
 
         def wait_for_page_title(driver, title):
